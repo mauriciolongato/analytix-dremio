@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  dremio:
+    build:
+      context: ./dremio
+      dockerfile: Dockerfile
+    volumes:
+      - /home/.../data-volume:/home/datalake
+    ports:
+      - "9047:9047" # UI (HTTP)
+      - "31010:31010" # ODBC/JDBC clients
+
+
